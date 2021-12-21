@@ -1,0 +1,34 @@
+.banner {
+    height: 365rpx;
+    width: 100%;
+}
+
+.swiper {
+    height: 365rpx;
+    width: 100%;
+}
+
+.swiper-item {
+    display: block;
+    height: 350rpx;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.le-img {
+    width: 680rpx;
+    height: 350rpx;
+    margin: 0 auto;
+    display: block;
+    transform: scale(.96);
+}
+
+.le-img.le-active {
+    transform: scale(1);
+}
+
+/* swiper 组件样式修改 */
+
+.swiper .wx-swiper-dot {
+    background: red;
+}

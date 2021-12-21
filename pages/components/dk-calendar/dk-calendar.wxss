@@ -1,0 +1,166 @@
+/* components/dkCalendar/dk-calendar.wxss */
+.dkDate-sm {
+    /* height: 234rpx; */
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 40rpx 0;
+}
+
+.dkDate {
+    background: #fff;
+    width: 686rpx;
+    margin: 20rpx auto;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.04);
+    border-radius: 15rpx;
+}
+
+.row1,
+.row2,
+.row3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #333333;
+}
+
+.row1 view,
+.row2 view,
+.row3 view {
+    width: 12.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 22rpx;
+}
+
+.row1 image {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.row2 view {
+    height: 64rpx;
+}
+
+.row2 text {
+    position: relative;
+    z-index: 2;
+}
+
+.row3 image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.yellow {
+    width: 46rpx !important;
+    height: 46rpx !important;
+    background: #ff7f21;
+    border-radius: 50%;
+    position: absolute !important;
+    left: calc(50% - 23rpx);
+    top: calc(50% - 23rpx);
+    color: #fff;
+}
+
+.gray {
+    color: #BBBBBB !important;
+}
+
+/* 灰+ */
+.gray-p {
+    color: #999999 !important;
+}
+
+.pnBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rpx;
+    position: relative;
+}
+
+.calendar-tit {
+    display: block;
+    width: 100%;
+}
+
+.calendar-yymmdd {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.pnBox .pre,
+.pnBox .next {
+    width: 10rpx;
+    height: 20rpx;
+    /* 增大点击范围 */
+    padding: 0 24rpx;
+}
+
+.pnBox .sign {
+    text-align: center;
+    display: block;
+    font-size: 22rpx;
+    color: #fff;
+    padding-top: 10rpx;
+}
+
+.pnBox .day {
+    display: inline-block;
+    font-size: 20rpx;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+}
+
+.pnBox  .sign-data {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 10rpx;
+}
+
+/* 大日历修改 */
+.dkDate .row2, .dkDate .row3 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.dkDate .row2 text {
+    /* padding: 14rpx 0 6rpx 0; */
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 22rpx;
+    position: absolute;
+    font-size: 22rpx;
+}
+
+.dkDate .row2 view {
+    flex-direction: column;
+    height: 60rpx;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.dkDate .row2 .imgcove {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.dkDate .row1 view,
+.dkDate .row2 view,
+.dkDate .row3 view {
+    width: 14.285%;
+}
+
+.dkDate .yellow {
+    background: #ff7f21 !important;
+}

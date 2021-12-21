@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "component-banner-swiper": "../components/swiper/component-banner-swiper",
+        "footer-banner-block":"../components/homefooter/footer-banner-block",
+        "homenav":"../components/homenav/homenav",
+        "dk-calendar":"../components/dk-calendar/dk-calendar"
+    }
+}

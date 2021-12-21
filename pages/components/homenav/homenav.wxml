@@ -1,0 +1,9 @@
+<view class="homenav">
+    <view class="nav-item" wx:for="{{navlist}}"  wx:key="*this"  data-webview="{{item.webUrl}}" bindtap="toWebView">
+        <view class="icon_pic">
+            <image class="imgcove" mode="{{item.mode}}" src="{{item.imgUrl}}"></image>
+            <text class="nav-tit">{{item.text}}</text>
+        </view>
+    </view>
+</view>
+  

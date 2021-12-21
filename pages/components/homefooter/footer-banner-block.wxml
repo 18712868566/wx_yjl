@@ -1,0 +1,8 @@
+<view class="homefooter">
+    <view wx:for="{{footBanner}}" wx:key="*this" class="fbanner"  data-webview="{{item.webUrl}}"  bindtap="toWebView">
+        <view  class="fbanner-pic" >
+            <image class="imgcove" mode="{{item.mode}}" src="{{item.imgUrl}}"></image>
+            <text class="fbanner-tit">{{item.text}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="app">
+    <!-- 引用组件的页面模版 -->
+    <component-banner-swiper> </component-banner-swiper>
+    <!-- 主导航模块 -->
+    <homenav></homenav>
+    <!-- 默认打卡组件 -->
+    <dk-calendar originActiveData="{{user_date_log}}" bind:selectDate="onSelectDate"></dk-calendar>
+    <!-- 底部板块视图 -->
+    <footer-banner-block> </footer-banner-block>
+</view>

@@ -1,0 +1,33 @@
+.homefooter {
+    width: 100%;
+    overflow: hidden;
+}
+
+.fbanner {
+    width: 682rpx;
+    height: 112rpx;
+    margin: 0 auto 9rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.fbanner-tit {
+    position: absolute;
+    top: 45rpx;
+    left: 0;
+    color: #7b7b7b;
+    font-size: 24rpx;
+    left: 37rpx;
+}
+
+.fbanner-pic {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fbanner-pic .imgcove{
+    width: 100%;
+    height: 100%;
+}

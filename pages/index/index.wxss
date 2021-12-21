@@ -1,0 +1,15 @@
+/* 在main.wxss中写  main.wxml引入swiper组件 */
+/* 修改dot形状 */
+swiper .wx-swiper-dots {
+    bottom: 0;
+}
+swiper .wx-swiper-dots .wx-swiper-dot {
+    width: 17rpx;
+    height: 4rpx;
+    border-radius: 4rpx;
+}
+
+/* 修改dot之间的间距 */
+swiper .wx-swiper-dots .wx-swiper-dot:nth-of-type(n+2) {
+    margin-left: 8rpx;
+}

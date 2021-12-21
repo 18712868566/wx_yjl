@@ -1,0 +1,18 @@
+<!-- 组件模板 -->
+<view class="page-section page-section-spacing banner">
+    <swiper class="swiper" 
+    indicator-dots="{{indicatorDots}}" 
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    circular="{{circular}}"
+    previous-margin="{{previousMargin}}px"
+    next-margin="{{nextMargin}}px"
+    duration="{{duration}}"
+    bindchange="swiperChange">
+        <block wx:for="{{imgList}}" wx:key="*this">
+            <swiper-item>
+                <image class='le-img {{nowIdx==index?"le-active":""}}' src='{{item}}'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
