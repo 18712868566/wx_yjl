@@ -1,12 +1,14 @@
 {
     "pages": [
+        "pages/nwes/nwes",
+
+        
         "pages/index/index",
         "pages/integral/index",
         "pages/user/index",
 
         "pages/webview/webview",
         
-        "pages/nwes/nwes",
         "pages/getIntegral/getIntegral",
         "pages/activity/activity",
         "pages/strategy/strategy",
