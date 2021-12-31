@@ -9,11 +9,7 @@ Page({
      */
     data: {
         nowIdx: 0, //当前swiper索引
-        imgList: [
-            "/assets/news/pic.jpg",
-            "/assets/news/pic.jpg",
-            "/assets/news/pic.jpg",
-        ],
+        imgList: [],
         indicatorDots: true, // 是否显示面板指示点
         indicatorColor: "rgba(0, 0, 0, .3)", //指示点颜色
         indicatorActiveColor: " #000000", //当前选中的指示点颜色
@@ -25,17 +21,81 @@ Page({
         previousMargin: "0", //前边距，可用于露出前一项的一小部分，接受 px 和 rpx 值
         nextMargin: "0", //后边距，可用于露出后一项的一小部分，接受 px 和 rpx 值
 
-
-        
+        // 新闻
+        newsLists: [ ]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options);
+        // console.log(options);
+        wx.setNavigationBarTitle({
+            title: '新闻资讯'
+        });
+        // 获取新闻轮播
+        this.getNewsSwiper();
+        // 获取新闻列表
+        this.getNewsLists();
+    },
+    /* 获取新闻轮播图 */
+    getNewsSwiper: function () {
+        // 初始化
+        const resArr = [];
+        wx.request({
+            url: app.store.getState().productionServer + '/api/common/get-list',
+            data: {
+                id: 2476
+            },
+            header: {
+                'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'POST',
+            dataType: 'json',
+            responseType: 'text',
+            success: (result) => {
+                const res = result.data.data.data
+                for (const key in res) {
+                    resArr.push(res[key].extend.homeSwiper)
+                }
+                this.setData({
+                    imgList: resArr
+                })
+            },
+            fail: () => {},
+            complete: () => {}
+        });
     },
 
+    /* 获取新闻列表 */
+    getNewsLists: function () {
+        // 初始化
+        const resArr = [];
+        wx.request({
+            url: app.store.getState().productionServer + '/api/common/get-list',
+            data: {
+                id: 2477,
+                pageSize:999
+            },
+            header: {
+                'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'POST',
+            dataType: 'json',
+            responseType: 'text',
+            success: (result) => {
+                const res = result.data.data.data
+                for (const key in res) {
+                    resArr.push(res[key])
+                }
+                this.setData({
+                    newsLists: resArr
+                })
+            },
+            fail: () => {},
+            complete: () => {}
+        });
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -90,4 +150,32 @@ Page({
             nowIdx: e.detail.current
         })
     },
+    // 跳转到想起
+    toDetail: function (e) {
+        console.log(e);
+        let webviewUrl = e.currentTarget.dataset.webview;
+        console.log(webviewUrl);
+
+        // 使用 navigateTo 跳转页面时, 要在 app.json 中配置文件路径
+        // 不然真机调试,会返回失败
+        wx.navigateTo({
+            url: "/pages/detail/detail?url=" + webviewUrl,
+            // success: (result) => {
+            //     wx.showToast({
+            //         title: '成功',
+            //         icon: 'success',
+            //         duration: 2000
+            //     })
+            // },
+            // fail: (rej) => {
+            //     console.log(rej);
+            //     wx.showToast({
+            //         title: '失败',
+            //         icon: 'success',
+            //         duration: 2000
+            //     })
+            // },
+            // complete: () => {}
+        });
+    }
 })

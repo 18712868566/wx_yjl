@@ -2,6 +2,7 @@
 .nwes-banner {
     height: 380rpx;
     width: 100%;
+    margin-bottom: 20rpx;
 }
 
 .swiper {
@@ -51,6 +52,64 @@ swiper .wx-swiper-dots .wx-swiper-dot:nth-of-type(n+2) {
     margin-left: 8rpx;
 }
 
-.news-lists{
+.news-lists {
     display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 18rpx 20rpx;
+    margin: 20rpx 10rpx 0;
+}
+
+.news-lists {
+    border-bottom: 1rpx solid #d8d8d8;
+}
+
+.news-lists .item-msg {
+    position: relative;
+    overflow: hidden;
+    height: 160rpx;
+    width: 400rpx;
+}
+
+.news-lists .item-msg .item-title {
+    font-size: 24rpx;
+    color: #313131;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item-img {
+    width: 280rpx;
+    height: 160rpx;
+}
+
+
+.news-lists .item-msg .item-min-title {
+    color: #7b7b7b;
+    font-size: 20rpx;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.news-lists .item-msg .item-date {
+    color: #7b7b7b;
+    font-size: 16rpx;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.item-img image {
+    display: block;
+    width: 100%;
+    height: 100%;
 }

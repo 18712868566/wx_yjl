@@ -1,0 +1,12 @@
+<view class="detail">
+    <view class="detail_bg">
+        <image class="detail_banner" src="/assets/integral/integral_banner.png" mode="widthFix" />
+    </view>
+    <view class="detail_user"></view>
+    <view class="detail_wrap">
+        <view class="news-tit">{{title}}</view>
+        <view class="details">
+            <mp-html content="{{details}}"  set-title="{{false}}" preview-img="{{false}}"  lazy-load="{{true}}"  />
+        </view>
+    </view>
+</view>

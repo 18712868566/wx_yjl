@@ -1,6 +1,5 @@
 /**app.wxss  全局样式**/
 
 page {
-    background: #eff0f4;
     position: relative;
 }

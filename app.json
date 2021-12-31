@@ -1,23 +1,33 @@
 {
     "pages": [
-        "pages/nwes/nwes",
-
-        
         "pages/index/index",
-        "pages/integral/index",
         "pages/user/index",
 
-        "pages/webview/webview",
-        
         "pages/getIntegral/getIntegral",
+        "pages/integral/index",
+        "pages/lottdetail/lottdetail",
+        "pages/address/address",
+
+        "pages/webview/webview",
+
+        "pages/nwes/nwes",
+        "pages/detail/detail",
+
         "pages/activity/activity",
         "pages/strategy/strategy",
+
+        "pages/exchangelist/exchangelist",
+        "pages/real/real",
+
+        "pages/herodetail/herodetail",
+        
+        "pages/bandrole/bandrole",
         "pages/atlas/atlas"
+
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "遇见龙",
         "navigationBarTextStyle": "black",
         "enablePullDownRefresh": false,
         "backgroundColor":"#eff0f4"

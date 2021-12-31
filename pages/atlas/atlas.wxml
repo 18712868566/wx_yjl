@@ -1,0 +1,310 @@
+<view class="atlas">
+    <view class="atlas_bg">
+        <image class="atlas_banner" src="/assets/integral/integral_banner.png" mode="widthFix" />
+    </view>
+    <view class="integral_user">
+        <view class="userinfo">
+            <block wx:if="{{canIUseOpenData}}">
+                <view class="userinfo-avatar">
+                    <open-data type="userAvatarUrl"></open-data>
+                </view>
+                <open-data class="name" type="userNickName"></open-data>
+            </block>
+            <block wx:elif="{{!hasUserInfo}}">
+                <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile">获取头像昵称</button>
+                <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                    获取头像昵称
+                </button>
+                <view wx:else>请使用1.4.4及以上版本基础库</view>
+            </block>
+            <block wx:else>
+                <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </block>
+        </view>
+        <view class="band_userid" bind:tap="bandRole">
+            绑定用户信息
+            <text decode='true'>&gt;</text>
+            <text decode='true'>&gt;</text>
+        </view>
+    </view>
+    <view class="atlas_center">
+        <view class="_header">
+            <view class='{{menuTapCurrent=="0"?"btn_selected":""}} after' data-current="0" bindtap="menuTap">
+                <block wx:if='{{menuTapCurrent == "0"}}'>
+                    <image class="tabpic" src="/assets/atlas/tab1-curr.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <block wx:else>
+                    <image class="tabpic" src="/assets/atlas/tab1.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <text>风</text>
+            </view>
+            <view class='{{menuTapCurrent=="1"?"btn_selected":""}}  after' data-current="1" bindtap="menuTap">
+                <block wx:if='{{menuTapCurrent == "1"}}'>
+                    <image class="tabpic" src="/assets/atlas/tab2-curr.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <block wx:else>
+                    <image class="tabpic" src="/assets/atlas/tab2.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <text>水</text>
+            </view>
+            <view class='{{menuTapCurrent=="2"?"btn_selected":""}}  after' data-current="2" bindtap="menuTap">
+                <block wx:if='{{menuTapCurrent == "2"}}'>
+                    <image class="tabpic" src="/assets/atlas/tab3-curr.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <block wx:else>
+                    <image class="tabpic" src="/assets/atlas/tab3.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <text>火</text>
+            </view>
+            <view class='{{menuTapCurrent=="3"?"btn_selected":""}}  after' data-current="3" bindtap="menuTap">
+                <block wx:if='{{menuTapCurrent == "3"}}'>
+                    <image class="tabpic" src="/assets/atlas/tab4-curr.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <block wx:else>
+                    <image class="tabpic" src="/assets/atlas/tab4.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <text>地</text>
+            </view>
+            <view class='{{menuTapCurrent=="4"?"btn_selected":""}}  after' data-current="4" bindtap="menuTap">
+                <block wx:if='{{menuTapCurrent == "4"}}'>
+                    <image class="tabpic" src="/assets/atlas/tab5-curr.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <block wx:else>
+                    <image class="tabpic" src="/assets/atlas/tab5.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <text>暗</text>
+            </view>
+            <view class='{{menuTapCurrent=="5"?"btn_selected":""}}  after' data-current="5" bindtap="menuTap">
+                <block wx:if='{{menuTapCurrent == "5"}}'>
+                    <image class="tabpic" src="/assets/atlas/tab6-curr.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <block wx:else>
+                    <image class="tabpic" src="/assets/atlas/tab6.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <text>光</text>
+            </view>
+            <view class='{{menuTapCurrent=="6"?"btn_selected":""}}  after' data-current="6" bindtap="menuTap">
+                <block wx:if='{{menuTapCurrent == "6"}}'>
+                    <image class="tabpic" src="/assets/atlas/tab7-curr.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <block wx:else>
+                    <image class="tabpic" src="/assets/atlas/tab7.png" mode="aspectFit" lazy-load="false" />
+                </block>
+                <text>异界</text>
+            </view>
+        </view>
+        <!-- 内容 -->
+        <view class="content" hidden="{{menuTapCurrent!='0'}}">
+            <view class="hero-item" wx:for="{{hero1}}" wx:key="*this">
+                <view class="posTips">
+                    <!-- $state.isBandRole 全局状态 - 未绑定前不显示 -->
+                    <block wx:if="{{$state.isBandRole}}">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="" src="/assets/atlas/get.png" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="" src="/assets/atlas/get-no.png" mode="aspectFit" />
+                        </block>
+                    </block>
+                </view>
+                <!-- $state.isBandRole 全局状态 - 未绑定前不显示 -->
+                <block wx:if="{{$state.isBandRole}}">
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="heroImg {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="heroImg  {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <image class="heroImg" src="{{item.extend.longImg}}" mode="aspectFit" />
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="content" hidden="{{menuTapCurrent!='1'}}">
+            <view class="hero-item" wx:for="{{hero2}}" wx:key="*this">
+                <view class="posTips">
+                    <!-- $state.isBandRole 全局状态 - 未绑定前不显示 -->
+                    <block wx:if="{{$state.isBandRole}}">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="" src="/assets/atlas/get.png" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="" src="/assets/atlas/get-no.png" mode="aspectFit" />
+                        </block>
+                    </block>
+                </view>
+                <block wx:if="{{$state.isBandRole}}">
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="heroImg {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="heroImg  {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <image class="heroImg" src="{{item.extend.longImg}}" mode="aspectFit" />
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="content" hidden="{{menuTapCurrent!='2'}}">
+            <view class="hero-item" wx:for="{{hero3}}" wx:key="*this">
+                <view class="posTips">
+                    <!-- $state.isBandRole 全局状态 - 未绑定前不显示 -->
+                    <block wx:if="{{$state.isBandRole}}">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="" src="/assets/atlas/get.png" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="" src="/assets/atlas/get-no.png" mode="aspectFit" />
+                        </block>
+                    </block>
+                </view>
+                <block wx:if="{{$state.isBandRole}}">
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="heroImg {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="heroImg  {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <image class="heroImg" src="{{item.extend.longImg}}" mode="aspectFit" />
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="content" hidden="{{menuTapCurrent!='3'}}">
+            <view class="hero-item" wx:for="{{hero4}}" wx:key="*this">
+                <view class="posTips">
+                    <!-- $state.isBandRole 全局状态 - 未绑定前不显示 -->
+                    <block wx:if="{{$state.isBandRole}}">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="" src="/assets/atlas/get.png" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="" src="/assets/atlas/get-no.png" mode="aspectFit" />
+                        </block>
+                    </block>
+                </view>
+                <block wx:if="{{$state.isBandRole}}">
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="heroImg {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="heroImg  {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <image class="heroImg" src="{{item.extend.longImg}}" mode="aspectFit" />
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="content" hidden="{{menuTapCurrent!='4'}}">
+            <view class="hero-item" wx:for="{{hero5}}" wx:key="*this">
+                <view class="posTips">
+                    <!-- $state.isBandRole 全局状态 - 未绑定前不显示 -->
+                    <block wx:if="{{$state.isBandRole}}">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="" src="/assets/atlas/get.png" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="" src="/assets/atlas/get-no.png" mode="aspectFit" />
+                        </block>
+                    </block>
+                </view>
+                <block wx:if="{{$state.isBandRole}}">
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="heroImg {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="heroImg  {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <image class="heroImg" src="{{item.extend.longImg}}" mode="aspectFit" />
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="content" hidden="{{menuTapCurrent!='5'}}">
+            <view class="hero-item" wx:for="{{hero6}}" wx:key="*this">
+                <view class="posTips">
+                    <!-- $state.isBandRole 全局状态 - 未绑定前不显示 -->
+                    <block wx:if="{{$state.isBandRole}}">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="" src="/assets/atlas/get.png" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="" src="/assets/atlas/get-no.png" mode="aspectFit" />
+                        </block>
+                    </block>
+                </view>
+                <block wx:if="{{$state.isBandRole}}">
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="heroImg {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="heroImg  {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <image class="heroImg" src="{{item.extend.longImg}}" mode="aspectFit" />
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="content" hidden="{{menuTapCurrent!='6'}}">
+            <view class="hero-item" wx:for="{{hero7}}" wx:key="*this">
+                <view class="posTips">
+                    <!-- $state.isBandRole 全局状态 - 未绑定前不显示 -->
+                    <block wx:if="{{$state.isBandRole}}">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="" src="/assets/atlas/get.png" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="" src="/assets/atlas/get-no.png" mode="aspectFit" />
+                        </block>
+                    </block>
+                </view>
+                <block wx:if="{{$state.isBandRole}}">
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <block wx:if="{{item.isGet}}">
+                            <image class="heroImg {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                        <block wx:else>
+                            <image class="heroImg  {{item.isGet?'get':'noget'}}" src="{{item.extend.longImg}}" mode="aspectFit" />
+                        </block>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class="heroImg" data-heroid="{{item.id}}" data-isGetId="{{item.extend.id}}" bind:tap="toDetail">
+                        <image class="heroImg" src="{{item.extend.longImg}}" mode="aspectFit" />
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>

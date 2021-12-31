@@ -1,19 +1,135 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #aaa;
+page {
+    background: #eff0f4;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
+
+.lottPic {
+    width: 100%;
+    display: block;
+    height: 278rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.center {
+    padding-top: 160rpx;
+}
+
+
+.userWrap {
+    width: 600rpx;
+    background: #fff;
+    margin: 0rpx auto 0;
+    box-shadow: 0rpx 0rpx 3rpx rgba(0, 0, 0, .2);
+    border-radius: 10rpx;
+    padding: 40rpx 40rpx 20rpx;
+    position: relative;
+    z-index: 2;
+    font-size: 28rpx;
+}
+
+button.info-item {
+    border: 0;
+    padding: 0;
+}
+
+button[size='mini'] {
+    width: auto;
+    padding: 0 0 !important;
+    line-height: 2;
+    font-size: 26rpx !important;
+    color: #000;
+    font-weight: normal;
+}
+
+.userIntegralInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 60rpx;
+}
+
+.userIntegralInfo .info-item {
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+}
+
+.userIntegralInfo .info-item:nth-child(1):after, .userIntegralInfo .info-item:nth-child(2):after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0rpx;
+    top: 25rpx;
+    width: 2rpx;
+    height: 36rpx;
+    background: #c9c8c8;
+}
+
+
+
+.band_gameid {
+    display: block;
+    width: 500rpx;
+    height: 90rpx;
+    margin: 50rpx auto 0rpx;
+}
+
+.getintegral_qudao {
+    width: 600rpx;
+    background: #fff;
+    margin: 20rpx auto 0;
+    box-shadow: 0rpx 0rpx 3rpx rgba(0, 0, 0, .2);
+    border-radius: 10rpx;
+    padding: 30rpx 40rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    color: #313131;
+    font-size: 24rpx;
+}
+
+.next {
+    display: block;
+    width: 20rpx;
+    height: 34rpx;
+}
+
+/* 头像 */
 
 .userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+    overflow: hidden;
+    width: 148rpx;
+    height: 148rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    position: absolute;
+    top: -100rpx;
+    left: 50%;
+    margin-left: -74rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+
+
+/* 智能客服 */
+.btn_contact {
+    width: 100% !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #313131 !important;
+    font-size: 24rpx !important;
+    font-weight: normal;
+    text-align: left;
 }

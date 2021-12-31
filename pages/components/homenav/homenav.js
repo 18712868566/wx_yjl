@@ -59,21 +59,21 @@ Component({
             // 不然真机调试,会返回失败
             wx.navigateTo({
                 url: ""+webviewUrl,
-                success: (result) => {
-                    wx.showToast({
-                        title: '成功',
-                        icon: 'success',
-                        duration: 2000
-                    })
-                },
-                fail: (rej) => {
-                    console.log(rej);
-                    wx.showToast({
-                        title: '失败',
-                        icon: 'success',
-                        duration: 2000
-                    })
-                },
+                // success: (result) => {
+                //     wx.showToast({
+                //         title: '成功',
+                //         icon: 'success',
+                //         duration: 2000
+                //     })
+                // },
+                // fail: (rej) => {
+                //     console.log(rej);
+                //     wx.showToast({
+                //         title: '失败',
+                //         icon: 'success',
+                //         duration: 2000
+                //     })
+                // },
                 complete: () => {}
             });
 

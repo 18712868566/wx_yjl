@@ -1,0 +1,37 @@
+lott id为{{id}}
+<image class="lottPic" src="{{lottImg}}" mode="widthFix" />
+<view class="lottMsg">
+    <view class="lottTips">
+        名称:
+        <text class="">{{lottName}}</text>
+    </view>
+    <view class="lottTips">
+        消耗积分:
+        <text class="">{{lottIntegral}}</text>
+    </view>
+    <view class="lottTips">
+        商品详情:
+        <text class="">{{lottDetail}}:</text>
+    </view>
+    <view class="lottTips">
+        库存:
+        <text class="">{{lottStock}}</text>
+    </view>
+</view>
+<view class="lott_gz">
+    <view class="gzTit">兑换规则</view>
+    <view>1:每个账号限制兑换次数</view>
+    <view>2:兑换成功后发送至绑定微信账户中</view>
+    <view>3:每个账号限制兑换次数</view>
+    <view>4:兑换成功后发送至绑定微信账户中</view>
+</view>
+<navigator url="/pages/address/address?title=填写地址">
+    <view class="duihuan">
+        <view>
+            <text class="tit">兑换</text>
+            （我的积分:
+            <text class="">{{$state.globalIntegrate}}</text>
+            ）
+        </view>
+    </view>
+</navigator>

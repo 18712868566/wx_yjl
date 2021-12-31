@@ -33,9 +33,7 @@ Component({
         activeData: [],
         isNext: true,
         isPre: true,
-
     },
-
     /**
      * 组件的方法列表
      */
@@ -283,6 +281,7 @@ Component({
             if (!day) return
             //灰色过滤
             if (!isClick) return
+
             // 精确微型日历-向上退月
             if (this.data.size == 'm') {
                 let today = new Date().getDate()
@@ -301,7 +300,9 @@ Component({
                     }
                 }
             }
-            // console.log(e.currentTarget.dataset)
+
+            console.log(e.currentTarget.dataset)
+            
             //输出使用-，其余全用/
             let currDayDetail = `${this.data.chooseYear}/${this.data.chooseMonth<10?'0'+this.data.chooseMonth:this.data.chooseMonth}/${day<10?'0'+day:day}`
             let pushCurrDayDetail = `${this.data.chooseYear}-${this.data.chooseMonth<10?'0'+this.data.chooseMonth:this.data.chooseMonth}-${day<10?'0'+day:day}`
@@ -327,7 +328,6 @@ Component({
             const day = date.getDate()
             return [year, month, day].map(formatNumber).join('/')
         },
-
     },
     lifetimes: {
         attached: function () {

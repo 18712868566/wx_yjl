@@ -1,0 +1,15 @@
+<view class="detail">
+    <view class="detail_bg">
+        <image class="detail_banner" src="{{heroMsg.img}}" mode="widthFix" />
+    </view>
+    <view class="detail_hero"></view>
+    <view class="detail_wrap">
+        <view class="details">
+            <view class="hero-title">{{heroMsg.title}}  文章id为{{id}}</view>
+            <view class="hero-min-title">{{heroMsg.property.mintitle}}</view>
+            <view class="hero-dis">{{heroMsg.property.msg}}</view>
+            <view class="hero-min-title">{{heroMsg.data.mintitle}}</view>
+            <mp-html content="{{heroMsg.data.msg}}" set-title="{{false}}" preview-img="{{false}}" lazy-load="{{true}}" />
+        </view>
+    </view>
+</view>

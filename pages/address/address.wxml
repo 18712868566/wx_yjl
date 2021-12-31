@@ -1,0 +1,37 @@
+lott id为{{id}}
+<image class="lottPic" src="{{lottImg}}" mode="widthFix" />
+<view class="save-address">
+    <view class="page-section">
+        <view class="weui-cells  max-weui-cells">
+            <view class="weui-cell">
+                <input class="weui-input" placeholder-style="color:#9a9a9a" placeholder="名称"  auto-focus type="text" />
+            </view>
+        </view>
+    </view>
+    <view class="page-section">
+        <view class="weui-cells max-weui-cells">
+            <view class="weui-cell">
+                <input class="weui-input" placeholder-style="color:#9a9a9a" placeholder="电话"  maxlength="11" type="number" />
+            </view>
+        </view>
+    </view>
+    <view class="page-section">
+        <view class="weui-cells max-weui-cells">
+            <view class="weui-cell">
+                <input class="weui-input" placeholder-style="color:#9a9a9a" placeholder="收货地址" type="text" />
+            </view>
+        </view>
+    </view>
+    <view class="page-section">
+        <view class="weui-cells max-weui-cells">
+            <view class="weui-cell">
+                <input class="weui-input" placeholder-style="color:#9a9a9a" placeholder="邮编" type="number" />
+            </view>
+        </view>
+    </view>
+</view>
+<view class="duihuan" bind:tap="exchange">
+    <view>
+        <text class="tit">确认花费{{123}}兑换</text>
+    </view>
+</view>

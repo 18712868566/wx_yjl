@@ -1,0 +1,60 @@
+page {
+    background: #eff0f4;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.lottMsg {
+    width: 100%;
+    background: #fff;
+    padding: 50rpx 50rpx 30rpx;
+    color: #313131;
+    font-size: 24rpx;
+}
+
+.lottTips {
+    line-height: 40rpx;
+}
+.lottPic {
+    width: 100%;
+    display: block;
+    height: 348rpx;
+}
+
+
+.lott_gz {
+    width: 580rpx;
+    background: #fff;
+    margin: 20rpx auto 0;
+    box-shadow: 0rpx 0rpx 3rpx rgba(0, 0, 0, .2), -3rpx 6rpx 8rpx rgba(0, 0, 0, .2);
+    border-radius: 10rpx;
+    padding: 40rpx;
+    color: #888888;
+    font-size: 20rpx;
+    line-height: 36rpx;
+}
+
+.lott_gz .gzTit {
+    font-size: 24rpx;
+    color: #313131;
+    margin-bottom: 20rpx;
+}
+
+.duihuan {
+    background: #ff7f21;
+    width: 100%;
+    height: 110rpx;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    line-height: 110rpx;
+    color: #fff;
+    font-size: 26rpx;
+}
+
+
+.duihuan .tit {
+    color: #ffffff;
+    font-size: 36rpx;
+    font-weight: bold;
+}

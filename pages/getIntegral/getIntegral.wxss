@@ -1,0 +1,172 @@
+page {
+    background: #eff0f4;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.lottPic {
+    width: 100%;
+    display: block;
+    height: 278rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.center {
+    padding-top: 160rpx;
+}
+
+
+.userWrap {
+    width: 600rpx;
+    background: #fff;
+    margin: 0rpx auto 0;
+    box-shadow: 0rpx 0rpx 3rpx rgba(0, 0, 0, .2), -3rpx 6rpx 8rpx rgba(0, 0, 0, .2);
+    border-radius: 10rpx;
+    padding: 40rpx 40rpx 20rpx;
+    position: relative;
+    z-index: 2;
+    font-size: 28rpx;
+}
+
+button.info-item {
+    border: 0;
+    padding: 0;
+}
+
+button[size='mini'] {
+    width: auto;
+    padding: 0 0 !important;
+    line-height: 2;
+    font-size: 26rpx !important;
+    color: #000;
+    font-weight: normal;
+}
+
+.userIntegralInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 80rpx;
+}
+
+.userIntegralInfo .info-item {
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+}
+
+.userIntegralInfo .info-item:nth-child(1):after, .userIntegralInfo .info-item:nth-child(2):after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 40rpx;
+    top: 25rpx;
+    width: 2rpx;
+    height: 36rpx;
+    background: #c9c8c8;
+}
+
+
+
+.band_gameid {
+    display: block;
+    width: 500rpx;
+    height: 90rpx;
+    margin: 50rpx auto 0rpx;
+}
+
+.getintegral_qudao {
+    width: 600rpx;
+    background: #fff;
+    margin: 20rpx auto 0;
+    box-shadow: 0rpx 0rpx 3rpx rgba(0, 0, 0, .2), -3rpx 6rpx 8rpx rgba(0, 0, 0, .2);
+    border-radius: 10rpx;
+    padding: 40rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+
+.getintegral_qudao .nav-item {
+    text-align: center;
+    position: relative;
+}
+
+.getintegral_qudao .nav-item:nth-child(1):after, .getintegral_qudao .nav-item:nth-child(2):after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -35rpx;
+    top: 25rpx;
+    width: 2rpx;
+    height: 36rpx;
+    background: #c9c8c8;
+}
+
+.getintegral_qudao .nav-item:nth-child(2):after {
+    right: -50rpx;
+}
+
+.icon_pic {
+    display: block;
+    text-align: center;
+    width: 160rpx;
+}
+
+.icon_pic .imgcove {
+    display: block;
+    width: 32rpx;
+    height: 32rpx;
+    margin: 0 auto;
+}
+
+.nav-tit {
+    font-size: 24rpx;
+    color: #313131;
+}
+
+
+.lott_gz {
+    width: 600rpx;
+    background: #fff;
+    margin: 20rpx auto 0;
+    box-shadow: 0rpx 0rpx 3rpx rgba(0, 0, 0, .2), -3rpx 6rpx 8rpx rgba(0, 0, 0, .2);
+    border-radius: 10rpx;
+    padding: 40rpx;
+    color: #888888;
+    font-size: 20rpx;
+    line-height: 36rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.lott_gz .gzTit {
+    font-size: 24rpx;
+    color: #313131;
+    margin-bottom: 20rpx;
+}
+
+
+
+.userinfo-avatar {
+    overflow: hidden;
+    width: 148rpx;
+    height: 148rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    position: absolute;
+    top: -100rpx;
+    left: 50%;
+    margin-left: -74rpx;
+}

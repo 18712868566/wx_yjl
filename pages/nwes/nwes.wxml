@@ -1,4 +1,4 @@
-<!--pages/nwes/nwes.wxml-->
+<!-- pages/nwes/nwes.wxml -->
 <view class="nwes-banner">
     <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" duration="{{duration}}" bindchange="swiperChange">
         <block wx:for="{{imgList}}" wx:key="*this">
@@ -8,27 +8,15 @@
         </block>
     </swiper>
 </view>
-
 <view class="section">
-    <view class="news-lists">
+    <view class="news-lists" wx:for="{{newsLists}}" wx:key="*this"  data-webview="{{item.id}}" bindtap="toDetail">
         <view class="item-msg">
-            <text class="item-title">
-                20211028活动版本更新，福利送不停
-            </text>
-            <text class="item-min-title">
-                
-            </text>
-            <text class="item-date">
-                11/01/2021
-            </text>
-              
+            <view class="item-title">{{item.title}}</view>
+            <text class="item-min-title">{{item.sub_title}}</text>
+            <text class="item-date">{{item.created_at_formate}}</text>
         </view>
-
         <view class="item-img">
-            <image class="" src="/assets/news/1.png" mode="widthFix"/>
+            <image class="" src="{{item.thumb}}" mode="scaleToFill" />
         </view>
-          
-          
     </view>
 </view>
-  

@@ -4,9 +4,49 @@ const app = getApp()
 // 声明周期
 Page({
     data: {
+
     },
     onLoad: function (options) {
         // 页面创建时执行
+        wx.setNavigationBarTitle({
+            title: '遇见龙'
+        })
+    },
+    //微日期组件选中日期
+    onSelectDate(e) {
+        console.log('点击的日期:', e.detail.currDayDetail)
+        this.setData({
+            currSelectDate: e.detail.currDayDetail
+        })
+        console.log(this.data.currSelectDate);
+        console.log(typeof (this.data.currSelectDate));
+        let _this = this
+        if (_this.data.currSelectDate == _this.data.currDay) {
+            let query = {
+                signTime: _this.data.currSelectDate
+            }
+            let currDay = _this.data.currSelectDate
+            let currDay1 = currDay.substring(0, 7)
+            let query1 = {
+                signTime: currDay1
+            }
+            Request.apiRequest('xxx', query, 'post').then(res => {
+                wx.hideLoading()
+                console.log(res);
+                if (res.code == 200) {
+                    wx.showToast({
+                        title: res.data,
+                        icon: 'none',
+                        duration: 3000
+                    })
+
+                    _this.getriliList(query1)
+                }
+            })
+
+        } else {
+            console.log('不能点击哦。。。');
+        }
     },
     onShow: function () {
         // 页面出现在前台时执行

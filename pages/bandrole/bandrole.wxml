@@ -1,0 +1,49 @@
+<view class="band-role">
+    <text class="bandtitle" selectable="false" space="false" decode="false">绑定游戏UID获取预约奖励</text>
+    <view class="bandmintitle" selectable="false" space="false" decode="false">
+        （绑定即可获得: 宝石
+        <image class="bandlott" src="/assets/integral/bandlott.png" mode="aspectFit" lazy-load="false" binderror="" bindload="" />
+        ）
+    </view>
+    <view class="form">
+        <view class="page-section">
+            <view class="weui-cells">
+                <view class="weui-cell">
+                    <input class="weui-input" auto-focus placeholder-style="color:#9a9a9a" placeholder="请输入角色UID" bindinput="bindKeyInput" />
+                </view>
+            </view>
+            <view class="weui-cells__title">角色UID可返回游戏设置-头像-UID-点击复制</view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells">
+                <view class="weui-cell">
+                    <picker class="weui-input" bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="{{'name'}}" data-type="{{objectArray[index].type}}" mode="selector">
+                        <view class="picker">{{objectArray[index].name}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cells__title">官方包括: APP store，taptap,好游快爆，B站下载</view>
+        </view>
+
+        <view class="btn-getRoleInfo" bind:tap="getRoleInfo"> 
+            查询
+        </view>
+          
+
+        <view class="page-section">
+            <view class="weui-cells  max-weui-cells">
+                <view class="weui-cell">
+                    <input class="weui-input"  placeholder-style="color:#9a9a9a" placeholder="服务器展示" />
+                </view>
+            </view>
+        </view>
+        <view class="page-section">
+            <view class="weui-cells max-weui-cells">
+                <view class="weui-cell">
+                    <input class="weui-input"  placeholder-style="color:#9a9a9a" placeholder="玩家角色名" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="btn-band" bind:tap="ajaxBand">绑定</view>
+</view>

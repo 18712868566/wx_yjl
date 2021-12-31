@@ -12,6 +12,10 @@ Page({
         let targetUrl = options.url;
         this.setData({
             path: targetUrl
+        });
+
+        wx.setNavigationBarTitle({
+            title: '活动详情'
         })
     },
     onReady: function() {

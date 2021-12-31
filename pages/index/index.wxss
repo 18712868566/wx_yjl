@@ -3,6 +3,7 @@
 swiper .wx-swiper-dots {
     bottom: 0;
 }
+
 swiper .wx-swiper-dots .wx-swiper-dot {
     width: 17rpx;
     height: 4rpx;
@@ -12,4 +13,8 @@ swiper .wx-swiper-dots .wx-swiper-dot {
 /* 修改dot之间的间距 */
 swiper .wx-swiper-dots .wx-swiper-dot:nth-of-type(n+2) {
     margin-left: 8rpx;
+}
+
+page {
+    background: #eff0f4;
 }

@@ -1,0 +1,25 @@
+<view>
+    <view class="section">
+        <block wx:if="{{newsLists[0]}}">
+            <view class="news-lists" wx:for="{{newsLists}}" wx:key="*this" data-webview="{{item.id}}" bindtap="toDetail">
+                <view class="item-msg">
+                    <view class="item-title">商品名字:{{item.gift_name}}</view>
+                    <text class="item-min-title">花费积分:{{item.cost_points}}</text>
+                    <view class="gift_status">
+                        状态:
+                        <block wx:if="{{item.gift_status == 0}}">待处理</block>
+                        <block wx:elif="{{item.gift_status == 1}}">已发送</block>
+                        <block wx:else="{{item.gift_status == 2}}">已送达</block>
+                    </view>
+                    <view>单号:{{item.ship_number}}</view>
+                </view>
+                <view class="item-img">
+                    <image class="" src="{{item.itemImg}}" mode="{{item.mode}}" />
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="noreal">暂无订单，快去积累积分吧!</view>
+        </block>
+    </view>
+</view>

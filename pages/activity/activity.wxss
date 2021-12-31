@@ -1,0 +1,117 @@
+/* pages/nwes/nwes.wxss */
+.nwes-banner {
+    height: 380rpx;
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+
+.swiper {
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-item {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.le-img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.le-img.le-active {
+    transform: scale(1);
+}
+
+/* swiper 组件样式修改 */
+/* 修改dot形状 */
+swiper .wx-swiper-dots {
+    bottom: 13rpx;
+}
+
+swiper .wx-swiper-dots .wx-swiper-dot {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 1;
+}
+
+swiper .wx-swiper-dots .wx-swiper-dot.wx-swiper-dot-active {
+    background: #000;
+    opacity: 1;
+}
+
+/* 修改dot之间的间距 */
+swiper .wx-swiper-dots .wx-swiper-dot:nth-of-type(n+2) {
+    margin-left: 8rpx;
+}
+
+
+.section {
+    padding: 10rpx 0 50rpx;
+}
+
+.news-lists {
+    position: relative;
+    width: 682rpx;
+    margin: 20rpx auto 0;
+}
+
+.news-lists .item-msg .item-title {
+    font-size: 24rpx;
+    color: #313131;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item-img {
+    width: 682rpx;
+    height: 282rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.news-lists .item-msg {
+    position: relative;
+    overflow: hidden;
+    height: 58rpx;
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    font-size: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    line-height: 58rpx;
+    padding: 0 20rpx;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 15rpx;
+    border-bottom-right-radius: 15rpx;
+}
+
+.news-lists .item-date {
+    color: rgba(255, 255, 255, .8);
+    font-size: 18rpx;
+}
+
+.item-img image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

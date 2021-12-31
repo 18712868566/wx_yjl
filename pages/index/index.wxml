@@ -4,7 +4,7 @@
     <!-- 主导航模块 -->
     <homenav></homenav>
     <!-- 默认打卡组件 -->
-    <dk-calendar originActiveData="{{user_date_log}}" bind:selectDate="onSelectDate"></dk-calendar>
+    <dk-calendar originActiveData="{{user_date_log}}" bind:selectDate=""></dk-calendar>
     <!-- 底部板块视图 -->
     <footer-banner-block> </footer-banner-block>
 </view>
